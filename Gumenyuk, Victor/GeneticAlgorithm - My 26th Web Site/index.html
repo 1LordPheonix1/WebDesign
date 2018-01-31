@@ -1,0 +1,81 @@
+<html>
+
+<head>
+    <title>Evolutionary Steering</title>
+    <script src="libraries/p5.js"></script>
+    <script src="libraries/p5.dom.js"></script>
+    <script src="libraries/p5.sound.js"></script>
+    <script src="script.js" defer></script>
+    <script src="vehicle.js" defer></script>
+    <script src="predator.js" defer></script>
+</head>
+
+<body>
+	<h1>Evolutionary Steering</h1>
+	<h2>Description:</h2>
+	<p>This is a system of evolutionary steering.<br> The following link sends you to a table filled with
+	a description of each item in the simulation, as well as a few simulation images.<br>
+	<a href="description.html">Description</a></p>
+  <div id="canvascontainer"></div>
+  <div id="interface">
+    <!-- Simulation Parameters -->
+    <h4>Simulation Parameters:</h4>
+    <p id="parameters">
+      # of starting Vehicles: <input type="text" value="15"></input><br>
+      # of starting Plants: <input type="text" value="200"></input><br>
+      # of starting Poison: <input type="text" value="30"></input><br>
+      Rate of adding new Plants: <input type="text" value="0.3"></input><br>
+      Rate of adding Poison: <input type="text" value="0.1"></input><br>
+      Max Poison: <input type="text" value="500"></input><br>
+    </p>
+
+    <!-- Vehicle Parameters -->
+    <h4>Vehicle Parameters:</h4>
+    <p id="parameters2">
+      Velocity Minimum: <input type="text" value="-2"></input><br>
+      Velocity Maximum: <input type="text" value="2"></input><br>
+      Max Speed: <input type="text" value="5"></input><br>
+      Max Force: <input type="text" value="0.5"></input><br>
+      Max Health: <input type="text" value="1"></input><br>
+      Health Loss Rate: <input type="text" value="0.008"></input><br>
+      Nutritional Value of Plants: <input type="text" value="0.3"></input><br>
+      Poisonous Value of Poison: <input type="text" value="-0.5"></input><br>
+      Reproduction Chance per frame: <input type="text" value="0.003"></input><br>
+      Mutation Rate per creation: <input type="text" value="0.25"></input><br>
+    </p>
+
+    <!-- Genetic Parameters -->
+    <h4>Genetic Parameters</h4>
+    <p id="parameters3">
+    	Attractiveness of Plants:
+    		- Minimum: <input type="text" value="-2"></input><br>
+    		- Maximum: <input type="text" value="2"></input><br>
+    		- Percent Mutated By: (%): <input type="text" value="10"></input><br>
+    	Attractiveness of Poison:
+    		- Minimum: <input type="text" value="-2"></input><br>
+    		- Maximum: <input type="text" value="2"></input><br>
+    		- Percent Mutated By: (%): <input type="text" value="10"></input><br>
+    	Perception range of Plants:
+    		- Minimum: <input type="text" value="1"></input><br>
+    		- Maximum: <input type="text" value="100"></input><br>
+    		- Percent Mutated By: (%): <input type="text" value="25"></input><br>
+    	Perception range of Poison:
+    		- Minimum: <input type="text" value="1"></input><br>
+    		- Maximum: <input type="text" value="100"></input><br>
+    		- Percent Mutated By: (%): <input type="text" value="25"></input><br>
+    </p>
+
+    <!-- Generate -->
+    <p>
+      <input type="button" id="genBtn" value="Generate" onclick="generateSimulation()"></input>
+    </p>
+
+
+    <!-- Debug -->
+    <p>
+    debug: <input id="debug" type="checkbox" checked></input>
+    </p>
+  </div>
+</body>
+
+</html>
